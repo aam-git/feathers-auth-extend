@@ -1,7 +1,17 @@
 {
   "name": "feathers-auth-extend",
   "description": "Adds sign up verification, forgotten password reset, and other capabilities to local feathers-authentication ",
-  "version": "0.1.0",
+  "version": "0.1.1",
+  "author": "AAM Services",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aam-git/feathers-extend-auth.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aam-git/feathers-extend-auth/issues"
+  },
+  "homepage": "https://github.com/aam-git/feathers-extend-auth#readme",
   "main": "src/",
   "directories": {
     "src": "src"
@@ -23,7 +33,5 @@
     "verify",
     "reset",
     "password"
-  ],
-  "author": "AAM Services",
-  "license": "MIT"
+  ]
 }

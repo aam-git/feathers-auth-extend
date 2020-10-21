@@ -1,4 +1,5 @@
-const { discard, iff, isProvider } = require('feathers-hooks-common')
+const { discard, iff, isProvider } = require('feathers-hooks-common');
+const randomatic = require('randomatic');
 
 module.exports = {
   before: {
@@ -8,12 +9,12 @@ module.exports = {
           ...context.data,
           ...{
             isVerified: false,
-            verifyTokenExpires: null,
-            verifyToken: null,
+            verifyTokenExpires: (Date.now()) + (60*60*24*1000),
+            verifyToken: randomatic('Aa0', 8),
             resetTokenExpires: null,
             resetToken: null,
-            magicToken: null,
-            magicTokenExpires: null
+            magicTokenExpires: null,
+            magicToken: null
           }
         };
         return context;
@@ -25,7 +26,15 @@ module.exports = {
     all: [
       iff(
         isProvider('external'),
-        discard('password', 'address.city')
+        discard(
+          'isVerified',
+          'verifyTokenExpires',
+          'verifyToken',
+          'resetTokenExpires',
+          'resetToken',
+          'magicTokenExpires',
+          'magicToken'
+        )
       )
     ],
     find: [],
