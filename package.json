@@ -19,7 +19,8 @@
   "dependencies": {
     "nodemailer": "^6.4.14",
     "randomatic": "^3.1.1",
-    "feathers-hooks-common": "^5.0.4"
+    "feathers-hooks-common": "^5.0.4",
+    "validator": "^13.1.17"
   },
   "devDependencies": {},
   "scripts": {

@@ -1,9 +1,19 @@
-const { discard, iff, isProvider } = require('feathers-hooks-common');
+const { iff, isProvider } = require('feathers-hooks-common');
+
 const randomatic = require('randomatic');
+
+const {
+  protect
+} = require('@feathersjs/authentication-local').hooks;
+
+const emailValid = require('../helpers/isValidEmail');
+const checkUserExists = require('../helpers/checkUserExists');
 
 module.exports = {
   before: {
     create: [
+      emailValid(),
+      checkUserExists(),
       context => {
         context.data = {
           ...context.data,
@@ -26,15 +36,8 @@ module.exports = {
     all: [
       iff(
         isProvider('external'),
-        discard(
-          'isVerified',
-          'verifyTokenExpires',
-          'verifyToken',
-          'resetTokenExpires',
-          'resetToken',
-          'magicTokenExpires',
-          'magicToken'
-        )
+        context => { console.log('trigger external', context); },
+        protect('isVerified', 'verifyTokenExpires', 'verifyToken', 'resetTokenExpires', 'resetToken', 'magicTokenExpires','magicToken')
       )
     ],
     find: [],
