@@ -36,8 +36,15 @@ module.exports = {
     all: [
       iff(
         isProvider('external'),
-        context => { console.log('trigger external', context); },
-        protect('isVerified', 'verifyTokenExpires', 'verifyToken', 'resetTokenExpires', 'resetToken', 'magicTokenExpires','magicToken')
+        protect(
+          'isVerified',
+          'verifyTokenExpires',
+          'verifyToken',
+          'resetTokenExpires',
+          'resetToken',
+          'magicTokenExpires',
+          'magicToken'
+        )
       )
     ],
     find: [],
