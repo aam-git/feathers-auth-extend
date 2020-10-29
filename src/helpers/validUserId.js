@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-module.exports = (target = 'id') => {
+ module.exports = (target = 'id') => {
   return async context => {
     try {
       if (context.method.match('create')) {

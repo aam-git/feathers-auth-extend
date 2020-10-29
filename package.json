@@ -1,7 +1,7 @@
 {
   "name": "feathers-auth-extend",
-  "description": "Adds sign up verification, forgotten password reset, and other capabilities to local feathers-authentication ",
-  "version": "0.1.3",
+  "description": "Adds sign up verification, forgotten password reset, passwordless login, refresh token and other capabilities to feathers ",
+  "version": "0.1.4",
   "author": "AAM Services",
   "license": "MIT",
   "repository": {
@@ -17,10 +17,10 @@
     "src": "src"
   },
   "dependencies": {
-    "nodemailer": "^6.4.14",
     "randomatic": "^3.1.1",
     "feathers-hooks-common": "^5.0.4",
-    "validator": "^13.1.17"
+    "validator": "^13.1.17",
+    "feathers-mail": "^1.0.2"
   },
   "devDependencies": {},
   "scripts": {
@@ -33,6 +33,9 @@
     "extend",
     "verify",
     "reset",
-    "password"
+    "password",
+    "passwordless",
+    "login",
+    "refresh_token"
   ]
 }
