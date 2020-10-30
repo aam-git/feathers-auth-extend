@@ -1,7 +1,7 @@
 {
   "name": "feathers-auth-extend",
   "description": "Adds sign up verification, forgotten password reset, passwordless login, refresh token and other capabilities to feathers ",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "AAM Services",
   "license": "MIT",
   "repository": {

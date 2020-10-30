@@ -71,13 +71,11 @@ This will then email an auth token that can be used as below
 POST https://api.url/auth
 
 ```json
-
 {
     "action": "loginToken",
     "email": "email@address.here",
     "login_token": "CodEHeRe"
 }
-
 ```
 
 This will login the user and mark them as a verified User
@@ -94,6 +92,43 @@ POST https://api.url/auth
 ```
 
 This will issue a new auth token to the default amount set up in your config
+
+### Verify Account
+
+POST https://api.url/authManage
+
+```json
+{
+    "action": "verifyAccount",
+    "email": "email@address.here",
+    "token": "CodEhERe"
+}
+```
+
+### Reset password request
+
+POST https://api.url/authManage
+
+```json
+{
+    "action": "resetPassword",
+    "email": "email@address.here"
+
+}
+```
+
+### Reset password verify
+
+POST https://api.url/authManage
+
+```json
+{
+    "action": "verifyReset",
+    "email": "email@address.here",
+    "token": "CodEhERe",
+    "password": "SeCUREPassHERE"
+}
+```
 
 
 ## License
