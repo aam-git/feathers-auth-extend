@@ -62,7 +62,7 @@ app.configure(require('feathers-auth-extend'));
 ```get
 
 GET Request:
-https://api.url/auth/email@address.here
+https://api.url/authManage/email@address.here
 
 ```
 
