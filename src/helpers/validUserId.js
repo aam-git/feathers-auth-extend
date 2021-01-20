@@ -15,7 +15,7 @@ module.exports = (target = 'id') => {
           context.params.query[target] = String(context.params.user._id);
         }
       }
-      if (typeof context.params.user.show !== 'undefined') {
+      if (typeof context.params.query.show !== 'undefined') {
         delete context.params.query.show;
       }
     } catch (err) {
